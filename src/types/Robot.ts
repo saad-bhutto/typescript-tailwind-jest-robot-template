@@ -23,9 +23,8 @@ class Robot {
     public get id(): number {
         return this._id;
     }
-
     public set id(value: number) {
-        if(value <= 0) {
+        if (value <= 0) {
             throw new Error('Invalid ID value provided: ' + value);
         }
         this._id = value;
@@ -42,16 +41,29 @@ class Robot {
         return this._positions;
     }
 
+    /**
+     * helper getter function
+     * @returns the current row position
+     */
     public getCurrentRow(): number {
         return this.positions[0] || 0;
     }
 
+    /**
+     * helper getter function
+     * @returns the current column position
+     */
     public getCurrentColumn(): number {
         return this.positions[1] || 0;
     }
 
+    /**
+     * funtion to ste the poisition
+     * @param row  the current row index
+     * @param column the current column index
+     */
     public setPositions(row: number, column: number) {
-        if(row < 0 || column < 0) {
+        if (row < 0 || column < 0) {
             throw new Error('Invalid position value provided');
         }
 

@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
 
 import Grid from "../src/types/Grid"; // Assuming Grid is exported from 'grid.ts' or 'grid.tsx'
 import GridSlot from '../src/types/GridSlot';
@@ -24,7 +24,7 @@ describe('Grid', () => {
    */
   test('getSlot should return null if index is out of bound', () => {
     const myGrid = new Grid(5, 5);
-    expect(myGrid.getSlot(11,1)).toBe(null);
+    expect(myGrid.getSlot(11, 1)).toBe(null);
   });
 
 

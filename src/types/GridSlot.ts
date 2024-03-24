@@ -14,6 +14,11 @@ class GridSlot {
      */
     private _visited: Boolean = false;
 
+    /**
+     *
+     * @param id the id of the slot
+     * @param name the name of the slot
+     */
     constructor(id: number, name: string) {
         this.id = id;
         this.name = name;
@@ -23,7 +28,7 @@ class GridSlot {
         return this._id;
     }
     public set id(value: number) {
-        if(value <= 0) {
+        if (value <= 0) {
             throw new Error('Invalid ID value provided: ' + value);
         }
         this._id = value;

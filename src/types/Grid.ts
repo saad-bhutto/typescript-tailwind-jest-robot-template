@@ -23,7 +23,11 @@ class Grid {
      */
     private _robot: Robot;
 
-
+    /**
+     * default constructor
+     * @param numOfRows defines the number of rows in the grid
+     * @param numOfColumns  defines the number of columns in the grid
+     */
     constructor(numOfRows: number, numOfColumns: number) {
         this.numOfRows = numOfRows;
         this.numOfColumns = numOfColumns;
@@ -96,9 +100,9 @@ class Grid {
     /**
      * @returns boolean whether the grid has a robot
      */
-    public clear(){
+    public clear() {
         this.rows.forEach(r => r.forEach(r => r.visited = false));
-        this.robot.setPositions(0,0);
+        this.robot.setPositions(0, 0);
     }
 
     /**

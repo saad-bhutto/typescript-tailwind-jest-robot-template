@@ -5,6 +5,9 @@ import Robot from "./types/Robot"
 
 window.Alpine = Alpine
 
+/**
+ * ALpine Application initialization
+ */
 Alpine.data('app', () => {
     return {
         errorMessage: '',

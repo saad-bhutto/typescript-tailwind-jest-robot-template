@@ -1,4 +1,4 @@
-import {describe, expect, test} from '@jest/globals';
+import { describe, expect, test } from '@jest/globals';
 
 import GridSlot from '../src/types/GridSlot';
 
@@ -17,11 +17,11 @@ describe('GridSlot', () => {
   });
 
   test('setter should throw the exception when 0 value is given', () => {
-    expect(() => {new GridSlot(0, 'name')}).toThrow(Error);
+    expect(() => { new GridSlot(0, 'name') }).toThrow(Error);
   });
 
   test('when visited it should return true', () => {
-    let slot  = new GridSlot(10, 'name');
+    let slot = new GridSlot(10, 'name');
     slot.visited = true;
     expect(slot.isVisited()).toBe(true);
   });
