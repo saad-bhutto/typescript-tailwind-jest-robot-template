@@ -13,6 +13,9 @@ The robot accepts the following commands:
 - `E`: Move east
 - `S`: Move south
 
+![screenshot](screen.gif)
+
+
 ## Example
 
 An example command sequence:
