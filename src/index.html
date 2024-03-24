@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS + Flowbite + TypeScript Modal</title>
+</head>
+<body class="flex  flex-row items-center justify-center h-screen bg-gray-50">
+
+
+    <div id="app" x-data="app" >
+        <div class="py-6">
+            <h1 class="text-xl	">lets make the Robots work</h1>
+            <h2 class="text-lg	text-gray-500">Instructions</h2>
+            <p>Simply click on any slot and apply the sequence/commands for the robot</p>
+            <br/>
+             <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 rounded" @click="clear">
+                Clear
+            </button>
+        </div>
+
+    <div class="grid grid-cols-1 gap-3   " >
+        <!-- Row 1 -->
+        <template x-for="(row, index) in grid.rows">
+            <div class="flex flex-row">
+            <template x-for="(column, childindex) in row">
+                <div
+                    x-transition:enter.duration.500ms
+                    class="bg-gray-300 hover:bg-sky-700 h-16 w-16 flex justify-center items-center ml-1 mr-1"
+                    :class="column.visited ? 'bg-orange-300' : 'bg-gray-300'"
+                    x-text="column.visited ? '&#x2611;' : '&#x2609;'"
+                    @click="currentRow = index; currentColumn = childindex; showModal = true;"
+                    />
+            </template>
+            </div>
+        </template>
+      </div>
+      <div>
+        <!-- -->
+
+        <!-- Modal -->
+        <div
+          class="fixed inset-0 z-30 flex items-center justify-center overflow-auto bg-black bg-opacity-50"
+          x-show="showModal"
+        >
+          <!-- Modal inner -->
+          <div class="max-w-3xl px-6 py-4 mx-auto text-left bg-white rounded shadow-lg">
+            <div class="px-6" >
+                <div class="mb-4">
+
+                    <label class="block text-gray-700 text-sm font-bold mb-2 text-lg" for="username">
+                      Enter the sequence of the direction
+                    </label>
+                    <label class="block text-gray-600 text-sm font-bold mb-2" for="username">
+                      Current position: [<span x-text="currentRow"></span> , <span x-text="currentColumn"></span>]
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="sequence"
+                        x-model="sequence"
+                        type="text"
+                        placeholder="Sequence">
+                        <p class="text-red-500 text-xs italic" x-show="errorMessage.length > 0" x-text="errorMessage" ></p>
+
+                  </div>
+                  <p class="text-xs text-gray-400">All of the commands/sequence to the robot<br/> consist of a single capital letter or small letter <br/> and different commands are delineated by whitespace.</p>
+                  <br/>
+                  <hr/>
+                  <br/>
+                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded" @click="moveRobot">
+                      Move
+                  </button>
+                  <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 rounded" @click="showModal = false; currentRow = 0; currentColumn = 0">
+                      Close
+                  </button>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/bundle.js"></script>
+
+</body>
+</html>

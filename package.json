@@ -1,0 +1,53 @@
+{
+  "name": "typescript-tailwind-jest-robot-template",
+  "version": "1.0.0",
+  "description": "A project using Tailwind CSS, TypeScript, Webpack and Jest to help you get started with your applications.",
+  "main": "index.ts",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saad-bhutto/typescript-tailwind-jest-robot-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "tailwind",
+    "webpack",
+    "jest",
+    "css"
+  ],
+  "author": "Saad Bhutto.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saad-bhutto/typescript-tailwind-jest-robot-template/issues"
+  },
+  "homepage": "https://github.com/saad-bhutto/typescript-tailwind-jest-robot-template#readme",
+  "dependencies": {
+    "postcss": "^8.4.38",
+    "alpinejs": "^3.13.7",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/alpinejs": "^3.13.9",
+    "@types/jest": "^29.5.12",
+    "autoprefixer": "^10.4.19",
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "jest": "^29.7.0",
+    "mini-css-extract-plugin": "^2.8.1",
+    "postcss": "^8.4.38",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.2",
+    "style-loader": "^3.3.4",
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.1.2",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
